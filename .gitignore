@@ -1,10 +1,13 @@
-*.weights
 *.o
+*.a
 *.dSYM
 *.csv
 *.out
-# *.png
+*.png
 *.so
+*.exe
+*.dll
+*.lib
 mnist/
 data/
 caffe/
@@ -16,8 +19,10 @@ decaf/
 submission/
 cfg/
 build/darknet/*
+build_*/
 !build/darknet/YoloWrapper.cs
 .fuse*
+*.weights
 
 # OS Generated #
 .DS_Store*
@@ -26,6 +31,14 @@ Icon?
 Thumbs.db
 *.swp
 
-# CMake #
-cmake-build-debug/
-CMakeLists.txt
+# IDE generated #
+.vs/
+.vscode/
+
+# Managed by CMake
+src/version.h
+
+# Build artifacts
+lib/
+share/
+include/darknet/

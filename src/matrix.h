@@ -1,15 +1,20 @@
 #ifndef MATRIX_H
 #define MATRIX_H
-typedef struct matrix{
-    int rows, cols;
-    float **vals;
-} matrix;
+#include "darknet.h"
+
+//typedef struct matrix{
+//    int rows, cols;
+//    float **vals;
+//} matrix;
 
 typedef struct {
     int *assignments;
     matrix centers;
 } model;
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 model do_kmeans(matrix data, int k);
 matrix make_matrix(int rows, int cols);
@@ -26,4 +31,7 @@ matrix resize_matrix(matrix m, int size);
 
 float *pop_column(matrix *m, int c);
 
+#ifdef __cplusplus
+}
+#endif
 #endif
